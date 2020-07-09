@@ -13,11 +13,11 @@ test('renders contactForm', () => {
   expect (name).toBeInTheDocument()});
 
 
-  test("increments count when increment button is clicked", async () => {
+  test("Message and that button is clicked", async () => {
   
-    const { getByText } = render(<ContactForm />);
+    const { getByText, queryAllByLabelText } = render(<ContactForm />);
     const input = getByText(/message/i);
-    
+    expect(screen.getByRole('button')).toBeEmpty()
     expect(input).toHaveTextContent("Message");
   });
 
